@@ -26,6 +26,8 @@ form.addEventListener("submit", async (e) => {
         // Verifica se o email e senha batem
         if (email === data.Usuario1 && senha === data.Senha) {
             // Login OK
+            console.log(data.Usuario1)
+            console.log(data.senha)
             localStorage.setItem("loggedInUser", email); // opcional, se quiser usar na dashboard
             window.location.href = "dashboard.html";
         } else {
