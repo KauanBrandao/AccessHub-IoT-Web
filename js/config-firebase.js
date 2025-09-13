@@ -1,7 +1,8 @@
+// Importa Firebase (ES Module)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
+// Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyASpygXKT0cLOXVqvaiRp3sq4dDrmH1YXU",
   authDomain: "fechadura-digital-63428.firebaseapp.com",
@@ -11,9 +12,9 @@ const firebaseConfig = {
   messagingSenderId: "520430669490",
   appId: "1:520430669490:web:360d44e3ee7b9e18be43ab"
 };
-    
+
+// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const db = getDatabase(app);
 
-export { app, auth, db };
+export { app, db };
