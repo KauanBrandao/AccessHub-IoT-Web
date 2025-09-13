@@ -1,22 +1,38 @@
-import { auth } from "./firebase-config.js";
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+// Importa Firebase (como ES Module)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
-const loginForm = document.getElementById("login-form");
-const usernameInput = document.getElementById("usuario@gmail.com");
-const passwordInput = document.getElementById("123456");
+// Configuração do Firebase
+const firebaseConfig = {
+    databaseURL: "https://fechadura-digital-63428-default-rtdb.firebaseio.com/"
+};
 
-loginForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
+// Inicializa Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-  const email = usernameInput.value;
-  const password = passwordInput.value;
+const form = document.getElementById("login-form");
 
-  try {
-    
-    await signInWithEmailAndPassword(auth, email, password);
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    window.location.href = "dashboard.html";
-  } catch (error) {
-    alert("Erro no login: " + error.message);
-  }
+    const email = document.getElementById("username").value;
+    const senha = document.getElementById("password").value;
+
+    try {
+        const snapshot = await get(ref(db, "Usuarios"));
+        const data = snapshot.val();
+
+        // Verifica se o email e senha batem
+        if (email === data.Usuario1 && senha === data.Senha) {
+            // Login OK
+            localStorage.setItem("loggedInUser", email); // opcional, se quiser usar na dashboard
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Email ou senha inválidos");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Erro ao acessar o banco de dados");
+    }
 });

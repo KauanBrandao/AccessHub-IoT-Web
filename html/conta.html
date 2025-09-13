@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - AcessHub</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/conta.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <nav class="main-nav">
+                <div class="nav-left">
+                    <a href="dashboard.html">Menu</a>
+                    <a href="#">Status</a>
+                    <a href="dashboard.html">Dados de Abertura</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#" class="active">Conta</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="content-wrapper">
+            <section class="account-card">
+                <h2>Gerenciar Conta</h2>
+                <div class="user-details">
+                    <div class="detail-item">
+                        <strong>Usuário:</strong>
+                        <span id="username-display">Carregando...</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Tipo de Acesso:</strong>
+                        <span id="user-type">Cartão de Acesso</span>
+                    </div>
+                </div>
+
+                <form class="account-form">
+                    <h3>Alterar Senha</h3>
+                    <div class="form-group">
+                        <label for="current-password">Senha Atual</label>
+                        <input type="password" id="current-password" name="current-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Nova Senha</label>
+                        <input type="password" id="new-password" name="new-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar Nova Senha</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        <button type="button" class="btn btn-logout" id="logout-button">Sair (Logout)</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal de Logout -->
+    <div class="modal-overlay" id="logout-modal">
+        <div class="modal-content">
+            <h2>Confirmação de Logout</h2>
+            <p>Tem certeza que deseja sair da conta?</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancel-logout">Cancelar</button>
+                <button class="btn btn-logout-confirm" id="confirm-logout">Sim, Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/conta.js" defer></script>
+</body>
+</html>
