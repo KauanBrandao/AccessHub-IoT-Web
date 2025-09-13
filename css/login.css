@@ -110,3 +110,15 @@ button:hover {
 .extra-links a:hover {
     color: #0A4D68;
 }
+
+@media screen and (max-width: 600px) {
+    .user-text {
+        visibility: hidden;
+
+    }
+
+    .banner-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
