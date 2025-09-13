@@ -6,35 +6,44 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const usernameDisplay = document.getElementById('username-display');
-    const userType = document.getElementById('user-type');
+    // Preenche todos os elementos que mostram o usuário
+    const usernameDisplays = document.querySelectorAll('#username-display');
+    usernameDisplays.forEach(el => el.textContent = loggedInUser);
 
-    usernameDisplay.textContent = loggedInUser;
+    // Exibe o tipo de usuário (Administrador ou Usuário)
+    const userTypeDisplays = document.querySelectorAll('#user-type');
+    userTypeDisplays.forEach(el => {
+        // Aqui você pode definir a lógica do tipo de usuário
+        if (loggedInUser === "usuario@gmail.com") {
+            el.textContent = "Administrador";
+        } else {
+            el.textContent = "Usuário";
+        }
+    });
 
-    // Se o usuário tiver "@" no email, é admin
-    if (loggedInUser.includes('@')) {
-        userType.textContent = 'Administrador';
-    }
-
-    // Modal de Logout
-    const logoutButton = document.getElementById('logout-button');
+    // --- LÓGICA DO MODAL DE LOGOUT ---
+    const mainLogoutButton = document.getElementById('logout-button');
     const modalOverlay = document.getElementById('logout-modal');
     const cancelButton = document.getElementById('cancel-logout');
     const confirmButton = document.getElementById('confirm-logout');
 
-    logoutButton.addEventListener('click', () => {
-        modalOverlay.classList.add('active');
-    });
+    if (mainLogoutButton && modalOverlay && cancelButton && confirmButton) {
+        mainLogoutButton.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+        });
 
-    const closeModal = () => modalOverlay.classList.remove('active');
+        const closeModal = () => {
+            modalOverlay.classList.remove('active');
+        }
 
-    cancelButton.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', e => {
-        if (e.target === modalOverlay) closeModal();
-    });
+        cancelButton.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) closeModal();
+        });
 
-    confirmButton.addEventListener('click', () => {
-        localStorage.removeItem('loggedInUser');
-        window.location.href = 'login.html';
-    });
+        confirmButton.addEventListener('click', () => {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';
+        });
+    }
 });
