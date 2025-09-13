@@ -31,28 +31,18 @@ form.addEventListener("submit", async (e) => {
     const snapshot = await get(ref(db, "Usuarios"));
     const data = snapshot.val();
 
-    if (
-      emailInput.toLowerCase() === data.Usuario1.toLowerCase() &&
-      senhaInput === String(data.Senha)
-    ) {
-      // Login OK
-      localStorage.setItem("loggedInUser", emailInput);
-
-      let userType = "user";
-      if (emailInput.toLowerCase() === "usuario@gmail.com") {
-        userType = "admin";
-      }
-      localStorage.setItem("userType", userType);
-
-      window.location.href = "dashboard.html";
-    } else {
-      // MOSTRA O MODAL DE ERRO
-      modal.classList.add("active");
+        // Verifica se o email e senha batem
+        if (email === data.Usuario1 && senha === data.Senha) {
+            // Login OK
+            localStorage.setItem("loggedInUser", email); // opcional, se quiser usar na dashboard
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Email ou senha inválidos");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Erro ao acessar o banco de dados");
     }
-  } catch (err) {
-    console.error(err);
-    modal.classList.add("active");
-  }
 });
 
 // Fecha o modal ao clicar no botão
