@@ -70,30 +70,26 @@ header {
     gap: 20px;
 }
 
-/* NOVOS ESTILOS PARA A LOGO - SUBSTITUINDO O .logo-placeholder */
 .logo-container {
-    width: 60px; /* Largura fixa para o círculo */
-    height: 60px; /* Altura fixa para o círculo */
-    background-color: #ffffff; /* Fundo branco do círculo original */
-    border-radius: 50%; /* Torna o container circular */
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    overflow: hidden; /* **Importante**: Recorta qualquer parte da imagem que exceda o círculo */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
-    flex-shrink: 0; /* Impede que este item encolha em um flex container */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
 .acesshub-logo {
-    max-width: 180%; /* Ajuste este valor, por exemplo, para 95% ou 100% */
-    max-height: 180%; /* Ajuste este valor */
+    max-width: 180%;
+    max-height: 180%;
     height: auto;
     display: block;
     object-fit: contain;
-    /* filter: brightness(0.8); */
 }
-/* FIM DOS NOVOS ESTILOS PARA A LOGO */
-
 
 .door-icon {
     font-size: 40px;
@@ -324,44 +320,37 @@ header {
     color: white;
 }
 
-/* =================================
-   ESTILOS PARA O MODAL DE CONFIRMAÇÃO
-   ================================= */
-
 .modal-overlay {
-    position: fixed; /* Fica por cima de todo o conteúdo */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
-    display: none; /* Começa escondido */
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Garante que fique na frente de tudo */
+    z-index: 1000;
 }
 
-/* Classe para ativar o modal via JS */
 .modal-overlay.active {
     display: flex;
 }
 
 .modal-content {
-    background-color: #212529; /* Mesmo fundo do account-card */
+    background-color: #212529;
     color: #f8f9fa;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 400px; /* Largura máxima do modal */
+    max-width: 400px;
     text-align: center;
-    /* Animação de entrada */
     transform: scale(0.95);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Animação quando o modal se torna ativo */
 .modal-overlay.active .modal-content {
     transform: scale(1);
     opacity: 1;
@@ -385,7 +374,6 @@ header {
     gap: 1rem;
 }
 
-/* Reutiliza a classe .btn mas cria estilos específicos para os botões do modal */
 .btn-secondary {
     background-color: #495057;
     color: #f8f9fa;
@@ -404,35 +392,28 @@ header {
     background-color: #c82333;
 }
 
-
-
 .lock-status-info {
-    font-size: 18px; /* Mantém um tamanho de fonte consistente */
+    font-size: 18px;
     font-weight: 500;
-    color: #ffffff; /* Garante que o texto "Status da fechadura" seja branco */
+    color: #ffffff;
 }
 
 .status-text {
-    font-weight: 600; /* Deixa o status ("Aberta"/"Fechada") em negrito */
-    padding: 4px 8px; /* Adiciona um pequeno espaçamento interno */
-    border-radius: 4px; /* Arredonda as bordas */
-    transition: all 0.3s ease; /* Animação suave para a troca de cor */
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease; 
 }
 
 .status-open {
-    color: #c8e6c9; /* Cor do texto verde claro */
-    background-color: #2e7d32; /* Fundo verde escuro */
+    color: #c8e6c9;
+    background-color: #2e7d32; 
 }
 
 .status-closed {
-    color: #ffcdd2; /* Cor do texto vermelho claro */
-    background-color: #c62828; /* Fundo vermelho escuro */
+    color: #ffcdd2; 
+    background-color: #c62828; 
 }
-
-
-/* =================================
-   TABELA DE CARTÕES CADASTRADOS
-   ================================= */
 
 .log-card h2 {
     font-size: 1.6rem;
@@ -476,7 +457,6 @@ header {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Status dos cartões */
 .status-liberado {
     color: #28a745;
     font-weight: 600;
@@ -487,7 +467,6 @@ header {
     font-weight: 600;
 }
 
-/* Scroll interno caso haja muitas linhas */
 .log-card {
     background-color: #212529;
     margin-top: 30px;
@@ -498,7 +477,6 @@ header {
     overflow-y: auto;
 }
 
-/* Personalização do scrollbar */
 .log-card::-webkit-scrollbar {
     width: 8px;
 }
