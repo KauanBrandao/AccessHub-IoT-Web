@@ -514,13 +514,3 @@ header {
     border: 2px solid #212529;
 }
 
-@media screen and (max-width: 600px) {
-    .user-text{
-        visibility: hidden;
-    }
-    .banner-right{
-        display: flex;
-        justify-content: flex-end;
-    }
-
-}
