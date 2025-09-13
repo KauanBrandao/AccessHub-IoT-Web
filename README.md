@@ -5,6 +5,10 @@ O **AcessHub** é uma aplicação IoT que integra uma **fechadura eletrônica** 
 
 ---
 
+<img width= "60" height = "60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" />    <img width= "60" height = "60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" /> <img width= "60" height = "60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" /> <img width= "60" height = "60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />          
+
+---
+ 
 ## Tecnologias Utilizadas
 - **Hardware/IoT:** ESP32, sensores e atuadores
 - **Backend/Web:** JavaScript, Firebase (Authentication e Realtime Database)
