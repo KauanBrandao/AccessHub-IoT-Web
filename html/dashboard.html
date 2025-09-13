@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Controle de Porta</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <nav class="main-nav">
+                <div class="nav-left">
+                    <a href="#">Menu</a>
+                    <a href="#">Status</a>
+                    <a href="#" class="active">Dados de Abertura</a>
+                </div>
+                <div class="nav-right">
+                    <a href="#">Conta</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="content-wrapper">
+            <section class="status-banner">
+                <div class="banner-left">
+                    <div class="logo-placeholder">Logo</div>
+                    <div class="door-info">
+                        <i class='bx bxs-lock-alt door-icon'></i>
+                        <div class="door-text">
+                            <strong>Porta</strong>
+                            <span>Entrada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-right">
+                    <div class="user-info">
+                        <div class="profile-initial" id="profile-initial-avatar"></div>
+                        <div class="user-text">
+                            <strong id="username-display">Usuário</strong>
+                            <span>Cartão de Acesso</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="log-card">
+                <ul class="log-list">
+
+                    <li class="log-entry">
+                        <span class="log-time">14:32:15</span>
+                        <span class="log-date">13/09/2025</span>
+                        <span class="log-user">Cartão #1024</span>
+                        <span class="log-status success">Acesso Liberado</span>
+                    </li>
+                    <li class="log-entry">
+                        <span class="log-time">13:58:40</span>
+                        <span class="log-date">13/09/2025</span>
+                        <span class="log-user">Cartão #2048</span>
+                        <span class="log-status error">Acesso Negado</span>
+                    </li>
+                   <li class="log-entry">
+                        <span class="log-time">08:30:00</span>
+                        <span class="log-date">13/09/2025</span>
+                        <span class="log-user">Sistema Reiniciado</span>
+                        <span class="log-status info">Informativo</span>
+                    </li>
+
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+
+            if (!loggedInUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const usernameDisplay = document.getElementById('username-display');
+            const profileAvatar = document.getElementById('profile-initial-avatar');
+
+            usernameDisplay.textContent = loggedInUser;
+
+            const firstInitial = loggedInUser.charAt(0).toUpperCase();
+            profileAvatar.textContent = firstInitial;
+        });
+    </script>
+</body>
+</html>
