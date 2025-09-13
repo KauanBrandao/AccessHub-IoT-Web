@@ -42,7 +42,7 @@
         </header>
 
         <main class="content-wrapper">
-            <!-- Banner de status da fechadura -->
+        
             <section class="status-banner">
                 <div class="banner-left">
                     <div class="logo-container">
@@ -63,7 +63,6 @@
                 </div>
             </section>
 
-            <!-- Tabela de Cartões Cadastrados -->
             <section class="log-card">
                 <h2>Cartões Cadastrados</h2>
                 <table class="log-table">
@@ -117,11 +116,11 @@
             const firstInitial = loggedInUser.charAt(0).toUpperCase();
             profileAvatar.textContent = firstInitial;
 
-            // --------- Status da fechadura ---------
+        
             const lockStatusText = document.getElementById('lock-status-text');
 
-            // Aqui você define manualmente ou pega do seu backend / sensor
-            const isLockOpen = false; // true = aberta, false = fechada
+           
+            const isLockOpen = false; 
 
             if(isLockOpen){
                 lockStatusText.textContent = "Aberta";

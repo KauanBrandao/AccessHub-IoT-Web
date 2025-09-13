@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Preenche todos os elementos que mostram o usuário
+
     const usernameDisplays = document.querySelectorAll('#username-display');
     usernameDisplays.forEach(el => el.textContent = loggedInUser);
 
-    // Exibe o tipo de usuário (Administrador ou Usuário)
+ 
     const userTypeDisplays = document.querySelectorAll('#user-type');
     userTypeDisplays.forEach(el => {
-        // Aqui você pode definir a lógica do tipo de usuário
+        
         if (loggedInUser === "usuario@gmail.com") {
             el.textContent = "Administrador";
         } else {
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- LÓGICA DO MODAL DE LOGOUT ---
     const mainLogoutButton = document.getElementById('logout-button');
     const modalOverlay = document.getElementById('logout-modal');
     const cancelButton = document.getElementById('cancel-logout');
