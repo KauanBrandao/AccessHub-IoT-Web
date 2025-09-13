@@ -70,18 +70,30 @@ header {
     gap: 20px;
 }
 
-.logo-placeholder {
-    width: 60px;
-    height: 60px;
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 50%;
+/* NOVOS ESTILOS PARA A LOGO - SUBSTITUINDO O .logo-placeholder */
+.logo-container {
+    width: 60px; /* Largura fixa para o círculo */
+    height: 60px; /* Altura fixa para o círculo */
+    background-color: #ffffff; /* Fundo branco do círculo original */
+    border-radius: 50%; /* Torna o container circular */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    font-size: 18px;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    overflow: hidden; /* **Importante**: Recorta qualquer parte da imagem que exceda o círculo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    flex-shrink: 0; /* Impede que este item encolha em um flex container */
 }
+
+.acesshub-logo {
+    max-width: 180%; /* Ajuste este valor, por exemplo, para 95% ou 100% */
+    max-height: 180%; /* Ajuste este valor */
+    height: auto;
+    display: block;
+    object-fit: contain;
+    /* filter: brightness(0.8); */
+}
+/* FIM DOS NOVOS ESTILOS PARA A LOGO */
+
 
 .door-icon {
     font-size: 40px;
@@ -185,4 +197,319 @@ header {
 
 .log-status.info {
     color: #088395;
+}
+
+.account-card {
+    background-color: #212529;
+    color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.account-card h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 1rem;
+}
+
+.user-details {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.detail-item strong {
+    color: #adb5bd;
+    font-weight: 500;
+}
+
+.detail-item span {
+    font-weight: 600;
+}
+
+.account-form h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #adb5bd;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #343a40;
+    border: 1px solid #495057;
+    color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #6C757D;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #088395;
+    box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.25);
+}
+
+.form-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: #088395;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0A4D68;
+}
+
+.btn-logout {
+    background-color: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.btn-logout:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* =================================
+   ESTILOS PARA O MODAL DE CONFIRMAÇÃO
+   ================================= */
+
+.modal-overlay {
+    position: fixed; /* Fica por cima de todo o conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
+    display: none; /* Começa escondido */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fique na frente de tudo */
+}
+
+/* Classe para ativar o modal via JS */
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #212529; /* Mesmo fundo do account-card */
+    color: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Largura máxima do modal */
+    text-align: center;
+    /* Animação de entrada */
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animação quando o modal se torna ativo */
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #adb5bd;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Reutiliza a classe .btn mas cria estilos específicos para os botões do modal */
+.btn-secondary {
+    background-color: #495057;
+    color: #f8f9fa;
+}
+
+.btn-secondary:hover {
+    background-color: #6C757D;
+}
+
+.btn-logout-confirm {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-logout-confirm:hover {
+    background-color: #c82333;
+}
+
+
+
+.lock-status-info {
+    font-size: 18px; /* Mantém um tamanho de fonte consistente */
+    font-weight: 500;
+    color: #ffffff; /* Garante que o texto "Status da fechadura" seja branco */
+}
+
+.status-text {
+    font-weight: 600; /* Deixa o status ("Aberta"/"Fechada") em negrito */
+    padding: 4px 8px; /* Adiciona um pequeno espaçamento interno */
+    border-radius: 4px; /* Arredonda as bordas */
+    transition: all 0.3s ease; /* Animação suave para a troca de cor */
+}
+
+.status-open {
+    color: #c8e6c9; /* Cor do texto verde claro */
+    background-color: #2e7d32; /* Fundo verde escuro */
+}
+
+.status-closed {
+    color: #ffcdd2; /* Cor do texto vermelho claro */
+    background-color: #c62828; /* Fundo vermelho escuro */
+}
+
+
+/* =================================
+   TABELA DE CARTÕES CADASTRADOS
+   ================================= */
+
+.log-card h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #f8f9fa;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 8px;
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #f8f9fa;
+}
+
+.log-table thead {
+    background-color: #343a40;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.log-table th,
+.log-table td {
+    padding: 12px 10px;
+    text-align: left;
+}
+
+.log-table th {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.log-table tbody tr {
+    border-bottom: 1px solid #495057;
+    transition: background-color 0.2s ease;
+}
+
+.log-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Status dos cartões */
+.status-liberado {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-bloqueado {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Scroll interno caso haja muitas linhas */
+.log-card {
+    background-color: #212529;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Personalização do scrollbar */
+.log-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log-card::-webkit-scrollbar-track {
+    background: #212529;
+    border-radius: 10px;
+}
+
+.log-card::-webkit-scrollbar-thumb {
+    background-color: #6C757D;
+    border-radius: 10px;
+    border: 2px solid #212529;
 }

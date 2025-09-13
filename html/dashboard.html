@@ -5,36 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Controle de Porta</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/conta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Estilo do ícone na navbar */
+        .nav-right a {
+            display: flex;
+            align-items: center;
+            gap: 6px; /* Espaço entre ícone e texto */
+        }
+
+        .nav-right .profile-icon {
+            font-size: 24px;
+            color: #088395;
+        }
+    </style>
 </head>
 <body>
     <div class="page-container">
         <header>
             <nav class="main-nav">
                 <div class="nav-left">
-                    <a href="#">Menu</a>
+                    <a href="#" class="active">Dashboard</a>
                     <a href="#">Status</a>
-                    <a href="#" class="active">Dados de Abertura</a>
+                    <a href="#">Dados de Abertura</a>
                 </div>
                 <div class="nav-right">
-                    <a href="#">Conta</a>
+                    <a href="conta.html">
+                        <i class='bx bxs-user-circle profile-icon'></i>
+                        Conta
+                    </a>
                 </div>
             </nav>
         </header>
 
         <main class="content-wrapper">
+            <!-- Banner de status da fechadura -->
             <section class="status-banner">
                 <div class="banner-left">
-                    <div class="logo-placeholder">Logo</div>
-                    <div class="door-info">
-                        <i class='bx bxs-lock-alt door-icon'></i>
-                        <div class="door-text">
-                            <strong>Porta</strong>
-                            <span>Entrada</span>
-                        </div>
+                    <div class="logo-container">
+                        <img src="../img/logo.png" alt="AcessHub Logo" class="acesshub-logo">
+                    </div>
+                    <div class="lock-status-info">
+                        <strong>Status da fechadura:</strong>
+                        <span id="lock-status-text" class="status-text">Fechada</span>
                     </div>
                 </div>
                 <div class="banner-right">
@@ -42,35 +59,44 @@
                         <div class="profile-initial" id="profile-initial-avatar"></div>
                         <div class="user-text">
                             <strong id="username-display">Usuário</strong>
-                            <span>Cartão de Acesso</span>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Tabela de Cartões Cadastrados -->
             <section class="log-card">
-                <ul class="log-list">
-
-                    <li class="log-entry">
-                        <span class="log-time">14:32:15</span>
-                        <span class="log-date">13/09/2025</span>
-                        <span class="log-user">Cartão #1024</span>
-                        <span class="log-status success">Acesso Liberado</span>
-                    </li>
-                    <li class="log-entry">
-                        <span class="log-time">13:58:40</span>
-                        <span class="log-date">13/09/2025</span>
-                        <span class="log-user">Cartão #2048</span>
-                        <span class="log-status error">Acesso Negado</span>
-                    </li>
-                   <li class="log-entry">
-                        <span class="log-time">08:30:00</span>
-                        <span class="log-date">13/09/2025</span>
-                        <span class="log-user">Sistema Reiniciado</span>
-                        <span class="log-status info">Informativo</span>
-                    </li>
-
-                </ul>
+                <h2>Cartões Cadastrados</h2>
+                <table class="log-table">
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Último Uso</th>
+                            <th>Número do Cartão</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João</td>
+                            <td>13/09/2025 14:32</td>
+                            <td>#1024</td>
+                            <td class="status-liberado">Liberado</td>
+                        </tr>
+                        <tr>
+                            <td>Maria</td>
+                            <td>13/09/2025 13:58</td>
+                            <td>#2048</td>
+                            <td class="status-bloqueado">Bloqueado</td>
+                        </tr>
+                        <tr>
+                            <td>Pedro</td>
+                            <td>13/09/2025 08:30</td>
+                            <td>#3072</td>
+                            <td class="status-liberado">Liberado</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </main>
     </div>
@@ -91,7 +117,24 @@
 
             const firstInitial = loggedInUser.charAt(0).toUpperCase();
             profileAvatar.textContent = firstInitial;
+
+            // --------- Status da fechadura ---------
+            const lockStatusText = document.getElementById('lock-status-text');
+
+            // Aqui você define manualmente ou pega do seu backend / sensor
+            const isLockOpen = false; // true = aberta, false = fechada
+
+            if(isLockOpen){
+                lockStatusText.textContent = "Aberta";
+                lockStatusText.classList.remove("status-closed");
+                lockStatusText.classList.add("status-open");
+            } else {
+                lockStatusText.textContent = "Fechada";
+                lockStatusText.classList.remove("status-open");
+                lockStatusText.classList.add("status-closed");
+            }
         });
     </script>
+
 </body>
 </html>
