@@ -46,7 +46,7 @@ form.addEventListener("submit", async (e) => {
 
       window.location.href = "dashboard.html";
     } else {
-      // MOSTRA O MODAL DE ERRO
+      // MOSTRA O MODAL DE ERRO teste tets
       modal.classList.add("active");
     }
   } catch (err) {
