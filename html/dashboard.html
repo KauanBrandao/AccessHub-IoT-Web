@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,27 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        .nav-right a {
-            display: flex;
-            align-items: center;
-            gap: 6px; 
-        }
-
-        .nav-right .profile-icon {
-            font-size: 24px;
-            color: #088395;
-        }
-    </style>
 </head>
+
 <body>
     <div class="page-container">
         <header>
             <nav class="main-nav">
                 <div class="nav-left">
-                    <a href="#" class="active">Dashboard</a>
-                    <a href="#">Status</a>
-                    <a href="#">Dados de Abertura</a>
+                    <a href="#" class="active"><i class='bx bxs-dashboard'></i>Dashboard</a>
                 </div>
                 <div class="nav-right">
                     <a href="conta.html">
@@ -42,15 +30,18 @@
         </header>
 
         <main class="content-wrapper">
-        
+
             <section class="status-banner">
                 <div class="banner-left">
                     <div class="logo-container">
                         <img src="../img/logo.png" alt="AcessHub Logo" class="acesshub-logo">
                     </div>
                     <div class="lock-status-info">
-                        <strong>Status da fechadura:</strong>
-                        <span id="lock-status-text" class="status-text">Fechada</span>
+                        <div>
+                            <strong>Status:</strong>
+                            <span id="lock-status-text" class="status-text">Fechada</span>
+                        </div>
+                        <button id="lock-toggle-btn" class="btn-lock-toggle">Trancar/Destrancar</button>
                     </div>
                 </div>
                 <div class="banner-right">
@@ -64,7 +55,10 @@
             </section>
 
             <section class="log-card">
-                <h2>Cartões Cadastrados</h2>
+                <div class="log-header">
+                    <h2>Cartões Cadastrados</h2>
+                    <a href="cadastrarCartao.html" class="btn-add-card">Cadastrar cartão</a>
+                </div>
                 <table class="log-table">
                     <thead>
                         <tr>
@@ -72,67 +66,16 @@
                             <th>Último Uso</th>
                             <th>Número do Cartão</th>
                             <th>Status</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>João</td>
-                            <td>13/09/2025 14:32</td>
-                            <td>#1024</td>
-                            <td class="status-liberado">Liberado</td>
-                        </tr>
-                        <tr>
-                            <td>Maria</td>
-                            <td>13/09/2025 13:58</td>
-                            <td>#2048</td>
-                            <td class="status-bloqueado">Bloqueado</td>
-                        </tr>
-                        <tr>
-                            <td>Pedro</td>
-                            <td>13/09/2025 08:30</td>
-                            <td>#3072</td>
-                            <td class="status-liberado">Liberado</td>
-                        </tr>
+                    <tbody id="cartoes-list">
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const loggedInUser = localStorage.getItem('loggedInUser');
-
-            if (!loggedInUser) {
-                window.location.href = 'login.html';
-                return;
-            }
-
-            const usernameDisplay = document.getElementById('username-display');
-            const profileAvatar = document.getElementById('profile-initial-avatar');
-
-            usernameDisplay.textContent = loggedInUser;
-
-            const firstInitial = loggedInUser.charAt(0).toUpperCase();
-            profileAvatar.textContent = firstInitial;
-
-        
-            const lockStatusText = document.getElementById('lock-status-text');
-
-           
-            const isLockOpen = false; 
-
-            if(isLockOpen){
-                lockStatusText.textContent = "Aberta";
-                lockStatusText.classList.remove("status-closed");
-                lockStatusText.classList.add("status-open");
-            } else {
-                lockStatusText.textContent = "Fechada";
-                lockStatusText.classList.remove("status-open");
-                lockStatusText.classList.add("status-closed");
-            }
-        });
-    </script>
-
+    <script type="module" src="../js/dashboard.js"></script>
 </body>
+
 </html>

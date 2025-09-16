@@ -1,3 +1,4 @@
+/* Estilos Gerais */
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@ body {
     min-height: 100vh;
 }
 
+/* Header e Navegação */
 header {
     background-color: #f8f9fa;
     padding: 0 5%;
@@ -49,6 +51,24 @@ header {
     font-weight: 600;
 }
 
+.nav-left .bx {
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.nav-right a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-right .profile-icon {
+    font-size: 24px;
+    color: #088395;
+}
+
+/* Container Principal e Banner de Status */
 .content-wrapper {
     padding: 30px 5%;
 }
@@ -64,7 +84,10 @@ header {
     box-shadow: 0 8px 20px rgba(10, 77, 104, 0.2);
 }
 
-.banner-left, .banner-right, .door-info, .user-info {
+.banner-left,
+.banner-right,
+.door-info,
+.user-info {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -91,22 +114,6 @@ header {
     object-fit: contain;
 }
 
-.door-icon {
-    font-size: 40px;
-    opacity: 0.8;
-}
-
-.door-text strong, .user-text strong {
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.door-text span, .user-text span {
-    font-size: 14px;
-    opacity: 0.9;
-}
-
 .profile-initial {
     width: 50px;
     height: 50px;
@@ -121,13 +128,68 @@ header {
     border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
+/* Seção de Status da Porta */
+.lock-status-info {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.status-text {
+    font-weight: 600;
+    padding: 0;
+    border-radius: 0;
+    transition: color 0.3s ease;
+}
+
+.status-open {
+    color: #4CAF50;
+    background-color: transparent;
+}
+
+.status-closed {
+    color: #F44336;
+    background-color: transparent;
+}
+
+.btn-lock-toggle {
+    background-color: #088395;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-lock-toggle:hover {
+    background-color: #0A4D68;
+    transform: translateY(-2px);
+}
+
+/* Seção de Cartões Cadastrados */
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 8px;
+}
+
 .log-card {
     background-color: #212529;
     margin-top: 30px;
-    padding: 10px 15px 10px 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    height: 350px;
+    max-height: 400px;
     overflow-y: auto;
 }
 
@@ -146,55 +208,76 @@ header {
     border: 2px solid #212529;
 }
 
-.log-list {
-    list-style: none;
-    padding-right: 15px;
-}
-
-.log-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0;
+.log-card h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
     color: #f8f9fa;
-    font-size: 15px;
-    border-bottom: 1px solid #495057;
-}
-
-.log-entry:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
     border-bottom: none;
 }
 
-.log-entry span {
-    flex-basis: 25%;
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #f8f9fa;
+}
+
+.log-table thead {
+    background-color: #343a40;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.log-table th,
+.log-table td {
+    padding: 12px 10px;
     text-align: left;
 }
 
-.log-entry span:first-child {
-    padding-left: 10px;
+.log-table th {
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
-.log-entry span:last-child {
-    text-align: right;
-    padding-right: 10px;
+.log-table tbody tr {
+    border-bottom: 1px solid #495057;
+    transition: background-color 0.2s ease;
 }
 
-.log-status {
+.log-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.status-liberado {
+    color: #28a745;
     font-weight: 600;
 }
 
-.log-status.success {
-    color: #28a745;
-}
-
-.log-status.error {
+.status-bloqueado {
     color: #dc3545;
+    font-weight: 600;
 }
 
-.log-status.info {
-    color: #088395;
+.btn-add-card {
+    background-color: #088395;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.btn-add-card:hover {
+    background-color: #0A4D68;
+    transform: translateY(-1px);
+}
+
+/* Estilos de Conta e Cadastro */
 .account-card {
     background-color: #212529;
     color: #f8f9fa;
@@ -392,103 +475,79 @@ header {
     background-color: #c82333;
 }
 
-.lock-status-info {
+.door-text strong,
+.user-text strong {
+    display: block;
     font-size: 18px;
-    font-weight: 500;
-    color: #ffffff;
-}
-
-.status-text {
     font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 4px;
-    transition: all 0.3s ease; 
 }
 
-.status-open {
-    color: #c8e6c9;
-    background-color: #2e7d32; 
+.door-text span,
+.user-text span {
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-.status-closed {
-    color: #ffcdd2; 
-    background-color: #c62828; 
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 30px 5%;
 }
 
-.log-card h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #f8f9fa;
-    border-bottom: 1px solid #495057;
-    padding-bottom: 8px;
-}
-
-.log-table {
+.form-group select {
     width: 100%;
-    border-collapse: collapse;
-    color: #f8f9fa;
-}
-
-.log-table thead {
+    padding: 0.8rem 1rem;
     background-color: #343a40;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    border: 1px solid #495057;
+    color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236C757D'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
 }
 
-.log-table th,
-.log-table td {
-    padding: 12px 10px;
-    text-align: left;
+.form-group select:focus {
+    outline: none;
+    border-color: #088395;
+    box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.25);
 }
 
-.log-table th {
-    font-weight: 600;
-    font-size: 0.95rem;
+.log-table th:last-child {
+    text-align: right;
 }
 
-.log-table tbody tr {
-    border-bottom: 1px solid #495057;
-    transition: background-color 0.2s ease;
+.icon-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
 }
 
-.log-table tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+.icon-actions .bx {
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
-.status-liberado {
-    color: #28a745;
-    font-weight: 600;
+.btn-edit-card {
+    color: #6C757D;
 }
 
-.status-bloqueado {
+.btn-edit-card:hover {
+    color: #088395;
+}
+
+.btn-delete-card {
     color: #dc3545;
-    font-weight: 600;
 }
 
-.log-card {
-    background-color: #212529;
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-height: 400px;  
-    overflow-y: auto;
+.btn-delete-card:hover {
+    color: #c82333;
 }
-
-.log-card::-webkit-scrollbar {
-    width: 8px;
-}
-
-.log-card::-webkit-scrollbar-track {
-    background: #212529;
-    border-radius: 10px;
-}
-
-.log-card::-webkit-scrollbar-thumb {
-    background-color: #6C757D;
-    border-radius: 10px;
-    border: 2px solid #212529;
-}
-

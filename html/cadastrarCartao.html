@@ -1,0 +1,62 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Cartão</title>
+        <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="stylesheet" href="../css/conta.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+    </head>
+    <body>
+        <div class="page-container">
+            <header>
+                <nav class="main-nav">
+                    <div class="nav-left">
+                        <a href="dashboard.html" class="active"><i class='bx bxs-dashboard'></i>Dashboard</a>
+                    </div>
+                    <div class="nav-right">
+                        <a href="conta.html">
+                            <i class='bx bxs-user-circle profile-icon'></i>
+                            Conta
+                        </a>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="content-wrapper register-wrapper">
+                <div class="account-card">
+                    <h2>Cadastrar novo Cartão</h2>
+                    <form id="register-card-form">
+                        <div class="form-group">
+                            <label for="usuario">Usuário</label>
+                            <input type="text" id="usuario" name="usuario" placeholder="Ex: João Silva" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="idCartao">Número do Cartão</label>
+                            <input type="text" id="idCartao" name="idCartao" placeholder="Ex: 123456789" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="Liberado">Liberado</option>
+                                <option value="Bloqueado">Bloqueado</option>
+                            </select>
+                        </div>
+                        <div class="form-actions" style="margin-top: 20px;">
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                    </form>
+                    <p id="feedback-message" style="margin-top: 15px; text-align: center; font-weight: 500;"></p>
+                </div>
+            </main>
+        </div>
+
+        <script type="module" src="../js/cadastrarCartao.js"></script>
+
+    </body>
+    </html>

@@ -1,8 +1,7 @@
-// Importa Firebase (ES Module)
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
-// Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyASpygXKT0cLOXVqvaiRp3sq4dDrmH1YXU",
   authDomain: "fechadura-digital-63428.firebaseapp.com",
@@ -13,7 +12,6 @@ const firebaseConfig = {
   appId: "1:520430669490:web:360d44e3ee7b9e18be43ab"
 };
 
-// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
@@ -35,7 +33,6 @@ form.addEventListener("submit", async (e) => {
       emailInput.toLowerCase() === data.Usuario1.toLowerCase() &&
       senhaInput === String(data.Senha)
     ) {
-      // Login OK
       localStorage.setItem("loggedInUser", emailInput);
 
       let userType = "user";
@@ -46,7 +43,6 @@ form.addEventListener("submit", async (e) => {
 
       window.location.href = "dashboard.html";
     } else {
-      // MOSTRA O MODAL DE ERRO
       modal.classList.add("active");
     }
   } catch (err) {
@@ -55,7 +51,6 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-// Fecha o modal ao clicar no botão
 closeModalBtn.addEventListener("click", () => {
   modal.classList.remove("active");
 });
