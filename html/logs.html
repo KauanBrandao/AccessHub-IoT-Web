@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs de Acesso - AcessHub</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/logs.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a>
+                <a href="logs.html" class="active"><i class='bx bx-history'></i>Logs</a>
+            </div>
+            <div class="nav-right">
+                <a href="conta.html" id="user-account-link">
+                    <i class='bx bxs-user-circle profile-icon'></i>
+                    <span id="nav-username">Conta</span> 
+                    </a>
+                </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="log-card">
+            <div class="log-header">
+                <h2>Logs de Acesso</h2>
+                <div class="log-filters">
+                    <input type="search" id="search-input" placeholder="Buscar por usuário, data, cartão...">
+                </div>
+            </div>
+            <table class="log-table">
+                <thead>
+                    <tr>
+                        <th>Quem Acessou</th>
+                        <th>Data e Hora</th>
+                        <th>Tempo Aberta</th>
+                        <th>ID do Cartão</th>
+                    </tr>
+                </thead>
+                <tbody id="logs-list">
+                    <tr>
+                        <td>Artur</td>
+                        <td>02/10/2025, 08:34:35</td>
+                        <td>22 segundos</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Kauan</td>
+                        <td>01/10/2025, 20:12:45</td>
+                        <td>15 segundos</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Visitante A</td>
+                        <td>01/10/2025, 18:05:10</td>
+                        <td>3 minutos</td>
+                        <td>A4B1C8D3</td>
+                    </tr>
+                     <tr>
+                        <td>Artur</td>
+                        <td>18/09/2025, 15:16:58</td>
+                        <td>18 segundos</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    </body>
+</html>

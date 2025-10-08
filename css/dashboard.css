@@ -1,0 +1,368 @@
+/* =================================================================== */
+/* 1. RESET E ESTILOS GERAIS (TEMA ESCURO)                             */
+/* =================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #212529; /* Cor de fundo principal (cinza bem escuro) */
+    color: #f8f9fa; /* Cor de texto principal (branco) */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =================================================================== */
+/* 2. HEADER E BARRA DE NAVEGAÇÃO                                      */
+/* =================================================================== */
+
+header {
+    background-color: #2c2f33; /* Um tom ligeiramente mais claro para a navbar */
+    padding: 0 5%;
+    border-bottom: 1px solid #3a3f44;
+    width: 100%;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #ced4da; /* Cinza claro para links normais */
+    padding: 8px 15px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estado de hover e ativo para links da navbar */
+.main-nav a:hover, .main-nav a.active {
+    background-color: #495057; /* Fundo mais claro para destaque */
+    color: #ffffff; /* Texto branco puro */
+}
+
+.main-nav .bx {
+    font-size: 20px;
+}
+
+/* =================================================================== */
+/* 3. CONTEÚDO PRINCIPAL (MAIN)                                        */
+/* =================================================================== */
+
+.content-wrapper {
+    padding: 30px 5%;
+    flex-grow: 1;
+}
+
+/* =================================================================== */
+/* 4. BANNER DE STATUS (GRADIENTE AZUL)                                */
+/* =================================================================== */
+
+.status-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #0A4D68, #088395);
+    color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(10, 77, 104, 0.2);
+}
+
+.banner-left, .banner-right, .user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.acesshub-logo {
+    max-width: 180%;
+    height: auto;
+}
+
+.lock-status-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lock-status-info strong {
+    font-size: 18px;
+}
+
+/* Modifique a regra .status-text para incluir a transição */
+.status-text {
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Adicione esta linha */
+}
+
+.btn-lock-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-lock-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.profile-initial {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.user-text strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* =================================================================== */
+/* 5. CARD DE TABELAS (CARTÕES E LOGS)                                 */
+/* =================================================================== */
+
+.log-card {
+    background-color: #2c2f33;
+    padding: 25px 30px;
+    border-radius: 12px;
+    border: 1px solid #3a3f44;
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #495057;
+}
+
+.log-header h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+.btn-add-card {
+    background-color: #088395;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-add-card:hover {
+    background-color: #0A4D68;
+    transform: translateY(-1px);
+}
+
+/* Tabela */
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ced4da;
+}
+
+.log-table th, .log-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #3a3f44;
+}
+
+.log-table th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.log-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.log-table tbody tr:hover {
+    background-color: #343a40;
+}
+
+.status-liberado {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-bloqueado {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.icon-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.icon-actions .bx {
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-edit-card { color: #6C757D; }
+.btn-edit-card:hover { color: #088395; }
+.btn-delete-card { color: #6C757D; }
+.btn-delete-card:hover { color: #dc3545; }
+
+
+/* =================================================================== */
+/* 6. ESTILOS DE FORMULÁRIOS (PÁGINA CONTA E CADASTRO)                 */
+/* =================================================================== */
+
+.account-card {
+    background-color: #2c2f33;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #3a3f44;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.account-card h2, .account-card h3 {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 1rem;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #adb5bd;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #343a40;
+    border: 1px solid #495057;
+    color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #088395;
+    box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.25);
+}
+
+.form-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #088395;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0A4D68;
+    transform: translateY(-2px);
+}
+
+
+/* Adicione estas duas classes para as cores do status */
+
+.status-text.trancada {
+    color: #dc3545; /* Vermelho para o status "Trancada" */
+}
+
+.status-text.aberta {
+    color: #28a745; /* Verde para o status "Aberta" */
+}
+
+/* =================================================================== */
+/* 7. CORES DO STATUS DA PORTA (VERMELHO/VERDE)                        */
+/* Cole isto no final do seu arquivo dashboard.css                     */
+/* =================================================================== */
+
+.status-text.trancada {
+    color: #dc3545 !important; /* Vermelho para o status "Trancada" */
+}
+
+.status-text.aberta {
+    color: #28a745 !important; /* Verde para o status "Aberta" / "Destrancada" */
+}

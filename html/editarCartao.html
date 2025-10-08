@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cartão - AcessHub</title>
+    
+    <link rel="stylesheet" href="../css/formPage.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <nav class="main-nav">
+                <div class="nav-left">
+                    <a href="dashboard.html"><i class='bx bx-home-alt'></i> Dashboard</a>
+                    <a href="logs.html"><i class='bx bx-history'></i> Logs de Acesso</a>
+                </div>
+                <div class="nav-right">
+                    <a href="conta.html">
+                        <div class="user-info">
+                            <div class="user-text">
+                                <strong id="header-username">Yan Costa</strong>
+                                <span>Administrador</span>
+                            </div>
+                            <div class="profile-initial" id="header-initial">Y</div>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="content-wrapper form-wrapper">
+            <div class="form-card">
+                <h2>Editar Cartão</h2>
+                <form id="edit-card-form">
+                    <div class="form-group">
+                        <label for="usuario">Nome do Usuário</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Ex: Maria Silva" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idCartao">Número do Cartão</label>
+                        <input type="text" id="idCartao" name="idCartao" placeholder="Passe o cartão no leitor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" name="status" required>
+                            <option value="Liberado">Liberado</option>
+                            <option value="Bloqueado">Bloqueado</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='dashboard.html'">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </div>
+                </form>
+                <p id="feedback-message"></p>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../js/editarCartao.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* css/main.css */
+
+/* --- ESTILOS GERAIS E RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1e2124; /* <-- FUNDO ESCURO PARA A PÁGINA INTEIRA */
+    color: #f8f9fa; /* <-- COR DE TEXTO PADRÃO CLARA */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER E NAVEGAÇÃO (TEMA ESCURO) --- */
+header {
+    background-color: #212529; /* <-- HEADER COM FUNDO ESCURO */
+    padding: 0 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra mais sutil para o escuro */
+    width: 100%;
+    border-bottom: 1px solid #495057; /* Linha divisória sutil */
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #adb5bd; /* <-- COR DE TEXTO CLARA PARA LINKS */
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #343a40; /* <-- FUNDO SUTIL PARA HOVER */
+    color: #ffffff; /* Cor mais clara no hover */
+}
+
+.main-nav a.active {
+    color: #ffffff; /* <-- TEXTO BRANCO PARA O LINK ATIVO */
+    font-weight: 600;
+}
+
+.nav-left .bx, .nav-right .bx {
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.nav-right a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* --- CONTAINER DE CONTEÚDO (COMUM) --- */
+.content-wrapper {
+    padding: 30px 5%;
+    flex-grow: 1;
+}
+
+/* --- ESTILOS DE FORMULÁRIO E CARD (JÁ ERAM ESCUROS) --- */
+.account-card {
+    background-color: #212529;
+    color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ... (O restante dos estilos de .account-card, .form-group, .btn e .modal continuam os mesmos, pois já se encaixam no tema escuro) ... */

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Controle de Porta</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="dashboard.html" class="active"><i class='bx bxs-dashboard'></i>Dashboard</a>
+                <a href="logs.html"><i class='bx bx-history'></i>Logs</a>
+            </div>
+            <div class="nav-right">
+                <a href="conta.html" id="user-account-link">
+                    <i class='bx bxs-user-circle profile-icon'></i>
+                    <span>Conta</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+
+        <section class="status-banner">
+            <div class="banner-left">
+                <div class="logo-container">
+                    <img src="../img/logo.png" alt="AcessHub Logo" class="acesshub-logo">
+                </div>
+                <div class="lock-status-info">
+                    <div>
+                        <strong>Status:</strong>
+                        <span id="lock-status-text" class="status-text">Fechada</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="banner-right">
+                <button id="lock-toggle-btn" class="btn-lock-toggle">Trancar/Destrancar</button>
+            </div>
+        </section>
+
+        <section class="log-card">
+            <div class="log-header">
+                <h2>Cartões Cadastrados</h2>
+                <a href="cadastrarCartao.html" class="btn-add-card">Cadastrar cartão</a>
+            </div>
+            <table class="log-table">
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Último Uso</th>
+                        <th>Número do Cartão</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="cartoes-list">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script type="module" src="../js/dashboard.js"></script>
+</body>
+
+</html>

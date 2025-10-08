@@ -1,0 +1,97 @@
+/* =================================================================== */
+/* ESTILOS GERAIS DA PÁGINA DE LOGS                                    */
+/* =================================================================== */
+
+/* O body e o header já são estilizados pelo dashboard.css, não precisa repetir */
+
+/* Área principal que centraliza o conteúdo */
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* =================================================================== */
+/* CARD PRINCIPAL DE LOGS                                              */
+/* =================================================================== */
+
+.log-card {
+    width: 100%;
+    max-width: 1200px; /* Mais largo para caber a tabela confortavelmente */
+    padding: 25px 30px;
+    border-radius: 10px;
+    border: 1px solid #343a40;
+    background-color: #2c2f33; /* Um tom ligeiramente diferente do fundo para destaque */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #495057;
+}
+
+.log-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* Estilo para o campo de busca */
+.log-filters input[type="search"] {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #495057;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 14px;
+    min-width: 300px;
+}
+
+.log-filters input[type="search"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* =================================================================== */
+/* TABELA DE LOGS                                                      */
+/* =================================================================== */
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaço entre as células */
+    color: #ced4da;
+}
+
+/* Cabeçalho da tabela */
+.log-table thead th {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 2px solid #495057;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* Células da tabela */
+.log-table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #3a3f44;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+/* Efeito de hover nas linhas da tabela para melhor usabilidade */
+.log-table tbody tr:hover {
+    background-color: #343a40;
+}
+
+/* Remove a borda da última linha para um acabamento limpo */
+.log-table tbody tr:last-child td {
+    border-bottom: none;
+}
