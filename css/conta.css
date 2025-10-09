@@ -1,0 +1,288 @@
+/* =================================================================== */
+/* ESTILOS GERAIS DA PÁGINA                                            */
+/* =================================================================== */
+
+body {
+    background-color: #212529; 
+    color: #f8f9fa; 
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =================================================================== */
+/* HEADER / NAVBAR - CORES AJUSTADAS                                   */
+/* =================================================================== */
+
+header {
+    width: 100%;
+    background-color: #212529; 
+    border-bottom: 1px solid #495057;
+    padding: 10px 0;
+}
+
+nav.main-nav {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estilo geral para os links da navbar */
+.main-nav a {
+    color: #ced4da; /* Um pouco mais suave que branco para o estado padrão */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent; 
+}
+
+/* AQUI ESTÁ A MUDANÇA PRINCIPAL PARA DAR DESTAQUE */
+.main-nav a:hover, .main-nav a.active {
+    background-color: #495057; /* ANTES: #343a40 (Muito escuro). AGORA: Um cinza mais claro e visível. */
+    color: #ffffff; /* Texto fica branco puro para máximo contraste */
+}
+
+.main-nav a i {
+    font-size: 20px;
+}
+
+/* =================================================================== */
+/* CONTEÚDO PRINCIPAL (MAIN)                                           */
+/* =================================================================== */
+
+.account-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 65px);
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* =================================================================== */
+/* CARD "GERENCIAR CONTA"                                              */
+/* =================================================================== */
+
+.container-conta {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #495057; 
+    background-color: #212529;
+    box-shadow: none;
+}
+
+.container-conta h1, .container-conta h2 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ced4da;
+    font-weight: 500;
+}
+
+input[type="password"], input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #495057;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 16px;
+}
+
+input[type="password"]:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.info-usuario p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.info-usuario strong {
+    color: #ffffff;
+}
+
+/* =================================================================== */
+/* LAYOUT PRINCIPAL DA PÁGINA DE CONTA                                 */
+/* =================================================================== */
+
+.account-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    flex-grow: 1;
+}
+
+.account-card {
+    background-color: #2c2f33;
+    padding: 30px 40px;
+    border-radius: 12px;
+    border: 1px solid #3a3f44;
+    width: 100%;
+    max-width: 600px;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #495057;
+}
+
+/* =================================================================== */
+/* SEÇÃO DE DETALHES DO USUÁRIO                                        */
+/* =================================================================== */
+
+.user-details {
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 10px 0;
+}
+
+.detail-item strong {
+    color: #adb5bd;
+    font-weight: 500;
+}
+
+/* =================================================================== */
+/* FORMULÁRIO E BOTÕES                                                 */
+/* =================================================================== */
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    color: #adb5bd;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #343a40;
+    border: 1px solid #495057;
+    color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary { background-color: #088395; color: white; border: none; }
+.btn-primary:hover { background-color: #0A4D68; }
+
+.btn-logout { background-color: transparent; color: #dc3545; border: 1px solid #dc3545; }
+.btn-logout:hover { background-color: #dc3545; color: white; }
+
+/* =================================================================== */
+/* ESTILOS DO MODAL DE LOGOUT                                          */
+/* =================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex; /* Usamos flex para centralizar */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    /* Começa invisível e se torna visível com a classe 'active' */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: #2c2f33;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #495057;
+}
+
+.modal-content h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #adb5bd;
+    margin-bottom: 2rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-secondary { background-color: #495057; color: #f8f9fa; border: none; }
+.btn-secondary:hover { background-color: #6C757D; }
+
+.btn-logout-confirm { background-color: #dc3545; color: white; border: none; }
+.btn-logout-confirm:hover { background-color: #c82333; }

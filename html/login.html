@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Seguro - AcessHub</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="logo-container">
+                    <img src="../img/logo.png" alt="AcessHub Logo" class="login-logo">
+                </div>
+                <h2>Acesso Seguro</h2>
+                <p>Por favor, insira suas credenciais para continuar.</p>
+            </div>  
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="username" placeholder="Digite seu email" required>
+                </div>  
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            
+            <div class="extra-links">
+                <a href="#">Esqueceu a senha?</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/config-firebase.js"></script>
+    <script type="module" src="../js/login.js"></script>
+</body>
+</html>

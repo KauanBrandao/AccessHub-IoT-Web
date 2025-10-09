@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - AcessHub</title>
+    
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/conta.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a>
+                <a href="logs.html"><i class='bx bx-history'></i>Logs</a>
+            </div>
+            <div class="nav-right">
+                <a href="conta.html" id="user-account-link" class="active">
+                    <i class='bx bxs-user-circle profile-icon'></i>
+                    <span>Conta</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="account-main">
+        <div class="account-card">
+            <section class="user-details">
+                <h2>Gerenciar Conta</h2>
+                <div class="detail-item">
+                    <strong>Usuário:</strong>
+                    <span id="user-email-display">Kauan</span> </div>
+                <div class="detail-item">
+                    <strong>Tipo de Acesso:</strong>
+                    <span id="user-role-display">Administrador</span> </div>
+            </section>
+
+            <section class="account-form">
+                <h2>Alterar Senha</h2>
+                <div class="form-group">
+                    <label for="current-password">Senha Atual</label>
+                    <input type="password" id="current-password" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nova Senha</label>
+                    <input type="password" id="new-password" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Nova Senha</label>
+                    <input type="password" id="confirm-password" placeholder="••••••••">
+                </div>
+                <div class="form-actions">
+                    <button id="save-changes-btn" class="btn btn-primary">Salvar Alterações</button>
+                    <button id="show-logout-modal-btn" class="btn btn-logout">Sair (Logout)</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="logout-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Confirmação de Logout</h2>
+            <p>Tem certeza que deseja sair da conta?</p>
+            <div class="modal-actions">
+                <button id="cancel-logout-btn" class="btn btn-secondary">Cancelar</button>
+                <button id="confirm-logout-btn" class="btn btn-logout-confirm">Sim, Sair</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="../js/config-firebase.js"></script>
+    <script type="module" src="../js/conta.js"></script>
+
+</body>
+</html>
