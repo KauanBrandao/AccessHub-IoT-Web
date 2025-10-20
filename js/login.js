@@ -19,6 +19,10 @@ const form = document.getElementById("login-form");
 const modal = document.getElementById("login-error-modal");
 const closeModalBtn = document.getElementById("close-login-error");
 
+function exibirErroSimples(mensagem) {
+  alert("ERRO: " + mensagem);
+}
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -43,6 +47,7 @@ form.addEventListener("submit", async (e) => {
 
       window.location.href = "dashboard.html";
     } else {
+      exibirErroSimples(" Usuário ou senha incorreto(s)")
       modal.classList.add("active");
     }
   } catch (err) {
