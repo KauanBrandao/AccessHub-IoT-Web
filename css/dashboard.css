@@ -75,11 +75,13 @@ header {
 
 .status-banner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, #0A4D68, #088395);
     color: #ffffff;
     padding: 20px 30px;
+    gap: 15px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(10, 77, 104, 0.2);
 }
