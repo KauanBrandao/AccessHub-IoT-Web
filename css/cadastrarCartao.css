@@ -37,6 +37,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    flex-wrap: wrap; /* MODIFICAÇÃO ADICIONADA */
 }
 
 .nav-left { display: flex; gap: 20px; }
@@ -141,6 +142,7 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn {

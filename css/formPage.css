@@ -1,156 +1,168 @@
 /* --- Estilos Globais e de Layout (Base do Tema Escuro) --- */
 :root {
-    --bg-color: #212529;
-    --card-color: #343A40;
-    --border-color: #495057;
-    --text-primary: #f8f9fa;
-    --text-secondary: #adb5bd;
-    --accent-color: #007bff;
-    --green-status: #28a745;
-    --red-status: #dc3545;
+	--bg-color: #212529;
+	--card-color: #343A40;
+	--border-color: #495057;
+	--text-primary: #f8f9fa;
+	--text-secondary: #adb5bd;
+	--accent-color: #007bff;
+	--green-status: #28a745;
+	--red-status: #dc3545;
 }
 
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    -webkit-font-smoothing: antialiased;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-primary);
+	-webkit-font-smoothing: antialiased;
 }
 
 .page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 /* --- Header e Navegação (Estilo Consistente) --- */
 header {
-    background-color: var(--card-color);
-    padding: 0 5%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    flex-shrink: 0;
+	background-color: var(--card-color);
+	padding: 0 5%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	flex-shrink: 0;
 }
 
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 70px;
+	flex-wrap: wrap; /* ADICIONADO */
 }
 
-.nav-left { display: flex; gap: 20px; }
+.nav-left {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap; /* ADICIONADO */
+}
 
 .main-nav a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+	color: var(--text-secondary);
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 10px 15px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .main-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
+	background-color: rgba(255, 255, 255, 0.05);
+	color: var(--text-primary);
 }
 
-.user-info { display: flex; align-items: center; gap: 15px; }
+.user-info {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: wrap; /* ADICIONADO */
+}
+
 .user-text { text-align: right; }
 .user-text strong { display: block; color: var(--text-primary); font-weight: 500; }
 .user-text span { font-size: 0.8rem; color: var(--text-secondary); }
 .profile-initial {
-    width: 40px; height: 40px; border-radius: 50%;
-    background-color: var(--accent-color); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 600;
+	width: 40px; height: 40px; border-radius: 50%;
+	background-color: var(--accent-color); color: #fff;
+	display: flex; align-items: center; justify-content: center;
+	font-weight: 600;
 }
 
 /* --- Conteúdo Principal: Estilos para Páginas com Formulário Centralizado --- */
 .content-wrapper.form-wrapper {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 5%;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 5%;
 }
 
 .form-card {
-    background-color: var(--card-color);
-    border-radius: 12px;
-    padding: 30px 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 450px;
+	background-color: var(--card-color);
+	border-radius: 12px;
+	padding: 30px 40px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	max-width: 450px;
 }
 
 .form-card h2 {
-    font-weight: 600;
-    font-size: 1.6rem;
-    margin-top: 0;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
-    text-align: center;
+	font-weight: 600;
+	font-size: 1.6rem;
+	margin-top: 0;
+	margin-bottom: 25px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--border-color);
+	text-align: center;
 }
 
 /* --- Estilos do Formulário --- */
 .form-group { margin-bottom: 20px; }
 .form-group label {
-    display: block;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-    font-weight: 500;
+	display: block;
+	color: var(--text-secondary);
+	margin-bottom: 8px;
+	font-weight: 500;
 }
 
 .form-group input, .form-group select {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    border-radius: 8px;
-    font-size: 1rem;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	width: 100%;
+	padding: 12px;
+	background-color: var(--bg-color);
+	border: 1px solid var(--border-color);
+	color: var(--text-primary);
+	border-radius: 8px;
+	font-size: 1rem;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus, .form-group select:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+	outline: none;
+	border-color: var(--accent-color);
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
 .form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23adb5bd'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1.2em;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23adb5bd'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 1rem center;
+	background-size: 1.2em;
 }
 
 /* --- Estilos dos Botões --- */
 .form-actions {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	flex-wrap: wrap; /* ADICIONADO */
 }
 
 .btn {
-    flex-grow: 1;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
+	flex-grow: 1;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
 }
 
 .btn-primary { background-color: var(--accent-color); color: #fff; }
@@ -161,10 +173,10 @@ header {
 
 /* --- Mensagem de Feedback --- */
 #feedback-message {
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 500;
-    min-height: 1.2em;
+	margin-top: 20px;
+	text-align: center;
+	font-weight: 500;
+	min-height: 1.2em;
 }
 
 #feedback-message.success { color: var(--green-status); }
