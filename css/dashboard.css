@@ -84,6 +84,7 @@ header {
     gap: 15px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(10, 77, 104, 0.2);
+    padding-left: 20px;
 }
 
 .banner-left,
@@ -178,6 +179,8 @@ header {
 /* Seção de Cartões Cadastrados */
 .log-header {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
@@ -186,6 +189,7 @@ header {
 }
 
 .log-card {
+    flex-wrap: wrap;
     background-color: #212529;
     margin-top: 30px;
     padding: 20px;
